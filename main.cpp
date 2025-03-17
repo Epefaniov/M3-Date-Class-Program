@@ -40,9 +40,9 @@ int main() {
     // Display formats
     printTestHeader("Display formats for (12/25/2021)");
     Date d5(12, 25, 2021);
-    std::cout << d5.format1() << std::endl;
-    std::cout << d5.format2() << std::endl;
-    std::cout << d5.format3() << std::endl;
+    std::cout << "Format 1 (mm/dd/yyyy): " << d5.format1() << std::endl;
+    std::cout << "Format 2 (MonthName dd, yyyy): " << d5.format2() << std::endl;
+    std::cout << "Format 3 (dd MonthName yyyy): " << d5.format3() << std::endl;
 
     return 0;
 }
