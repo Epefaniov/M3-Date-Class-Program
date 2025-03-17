@@ -1,0 +1,116 @@
+Program Description:
+Design a class called Date. The class should store a date in three integers: month, day, and
+year. There should be member functions to print the date in the following forms:
+• 12/25/2021
+• December 25, 2021
+• 25 December 2021
+Demonstrate the class by writing a complete program implementing it.
+Input Validation: Do not accept values for the day greater than the last day of the month or less
+than 1. Do not accept values for the month greater than 12 or less than 1.
+ADT for Date Class:
+Note – you can change the function names and variable identifiers, the names provided here
+are for illustrative purposes (although you can use them if you want to).
+Domain – the date is represented by 3 integers. The month is an integer between 1 and 12.
+The day is an integer between 1 and the last day of that month. The year is a positive integer.
+The default date is 1/1/1900.
+Operations –
+1. There is one mutator function which takes as input the month, day and year. This function
+sets the date making sure that the month integer is between 1 and 12, that the day integer is
+between 1 and the last day of the month where,
+• Last day is 31 for Jan, Mar, May, Jul, Aug, Oct, Dec
+• Last day is 30 for Apr, Jun, Sep, Nov
+• Last day is 28 for Feb if the year is not a leap year
+• Last day is 29 for Feb if the year is a leap year
+If any of these parameters is invalid, the date is set to the default date.
+Example prototype for this function is:
+void setDate(int m, int day, int y);
+2. Supply three accessor functions, one for each instance variable.
+3. Provide a function with two overloads to determine if the year is a leap year. These functions
+return true if the year is a leap year, otherwise they return false. The first overload takes no
+parameters and uses the year from the object’s current state. The second overload takes
+the year as a parameter.
+Example prototypes:
+bool isLeapYear();
+bool isLeapYear(int year);
+4. Provide a function with two overloads that returns the last day of the month. This function
+returns an integer as follows:
+• Returns 31 for Jan, Mar, May, Jul, Aug, Oct, Dec
+• Returns 30 for Apr, Jun, Sep, Nov
+• Returns 28 for Feb if the year is not a leap year
+• Returns 29 for Feb if the year is a leap year
+The first overload takes no parameters and uses the month and year from the object’s
+current state. The second overload takes two parameters, the month and year.
+Example prototypes:
+int lastDay();
+int lastDay(int month, int year);
+5. Write one or more print functions that return the date as a string in one of the three formats
+provided in the problem description.
+6. Provide a constructor and a constructor with parameters. You can include default
+parameters with your constructor with parameters and then you won’t need a separate
+default constructor. Here is an example of the prototype would like:
+Date(int = 1, int = 1, int = 1900);
+Remember that the constructor is taking input from the client program so that input must be
+validated. One way to do that is to have your constructor call the setDate mutator function
+where the validation takes place. Another alternative is to set up a separate validation
+function that is called from both the constructor and the setDate function.
+Program Structure
+Separate the specification from the implementation by creating a Date.h file for the class
+definition and a Date.cpp file for the class implementation. Remember to put include guards in
+the header file. Be careful to inline only your simple functions (like the accessors).
+Test Program
+Write a test program with output that clearly shows what you are testing. Remember to test the
+default constructor and the constructor with parameters. Verify that you program does not allow
+invalid input either from the mutator function or from the constructor with parameters. Here is
+output from an example test program:
+Test default constructor: 1/1/1900
+Test constructor with valid date: 2/28/2009
+Test constructor with invalid month (45, 2, 2009): Month invalid
+1/1/1900
+Test constructor with invalid day (2/29/2009): Day invalid
+1/1/1900
+Test setDate with bad month (13): Month invalid4. Provide a function with two overloads that returns the last day of the month. This function
+returns an integer as follows:
+• Returns 31 for Jan, Mar, May, Jul, Aug, Oct, Dec
+• Returns 30 for Apr, Jun, Sep, Nov
+• Returns 28 for Feb if the year is not a leap year
+• Returns 29 for Feb if the year is a leap year
+The first overload takes no parameters and uses the month and year from the object’s
+current state. The second overload takes two parameters, the month and year.
+Example prototypes:
+int lastDay();
+int lastDay(int month, int year);
+5. Write one or more print functions that return the date as a string in one of the three formats
+provided in the problem description.
+6. Provide a constructor and a constructor with parameters. You can include default
+parameters with your constructor with parameters and then you won’t need a separate
+default constructor. Here is an example of the prototype would like:
+Date(int = 1, int = 1, int = 1900);
+Remember that the constructor is taking input from the client program so that input must be
+validated. One way to do that is to have your constructor call the setDate mutator function
+where the validation takes place. Another alternative is to set up a separate validation
+function that is called from both the constructor and the setDate function.
+Program Structure
+Separate the specification from the implementation by creating a Date.h file for the class
+definition and a Date.cpp file for the class implementation. Remember to put include guards in
+the header file. Be careful to inline only your simple functions (like the accessors).
+Test Program
+Write a test program with output that clearly shows what you are testing. Remember to test the
+default constructor and the constructor with parameters. Verify that you program does not allow
+invalid input either from the mutator function or from the constructor with parameters. Here is
+output from an example test program:
+Test default constructor: 1/1/1900
+Test constructor with valid date: 2/28/2009
+Test constructor with invalid month (45, 2, 2009): Month invalid
+1/1/1900
+Test constructor with invalid day (2/29/2009): Day invalid
+1/1/1900
+Test setDate with bad month (13): Month invalid
+1/1/1900
+Test setDate with bad day (4, 31, 2009)Day invalid
+1/1/1900
+Test for leap year with bad date (2/29/2009): Day invalid
+1/1/1900
+Test for leap year with good date (2/29/2008): 2/29/2008
+Test the print formats:
+February 29, 2008
+29 February 2008
